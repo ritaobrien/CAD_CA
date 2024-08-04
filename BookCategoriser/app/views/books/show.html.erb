@@ -1,0 +1,25 @@
+<h1>Books in the <%= @genre.name %> section SHOW BOOKS</h1>
+<p>
+<b>Book details:</b>
+
+<div id="books">
+<% @genre.books.each do |book| %>
+  <%= render book %>
+ 
+<% end %>
+</div>
+
+
+
+<div>
+<%= link_to 'Edit', edit_genre_book_path(@genre, @book) %> |
+<%= link_to 'Back', genre_books_path(@genre) %> |
+<%= link_to 'Add new book to genre', new_genre_book_path(@genre), class: 'btn btn-dark btn-sm' %>
+</div>
+
+
+
+
+
+
+

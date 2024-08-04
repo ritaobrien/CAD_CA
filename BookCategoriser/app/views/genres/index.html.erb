@@ -1,0 +1,29 @@
+<p style="color: green"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3">
+    </div>
+    <div class="col-lg-6">
+      <p class="headingtext">BOOK CATEGORISER</p>
+      <br />
+      <p class="center">Book Genres</p>
+      <br />
+      <div id="genres">
+        <% @genres.each do |genre| %>
+          <%= render genre %>
+          <p>
+            <div class="btn btn-outline-dark btn-sm">
+              <%= link_to "Show the #{genre.name} section", genre, :class => "btn" %>
+            </div>
+            <hr class="hr" />
+          </p>
+        <% end %>
+      </div>
+      <div class="btn btn-dark btn-sm">
+        <%= link_to "Add new genre", new_genre_path, :class => "btn" %>
+      </div>
+    </div>
+    <div class="col-lg-3">
+    </div>
+  </div>
+</div>

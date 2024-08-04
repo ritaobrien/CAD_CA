@@ -1,0 +1,21 @@
+<h1>Books in <%= @genre.name %> BOOKS INDEX</h1>
+
+  
+<% @genre.books.each do |book| %>
+    <%= render book %>
+<% end %>
+
+       
+
+
+
+
+
+
+
+
+
+
+    
+<%= link_to 'New book', new_genre_book_path(@genre) %>
+<%= link_to 'Back to genre', @genre %>
