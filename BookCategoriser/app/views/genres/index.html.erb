@@ -18,9 +18,14 @@
           <%= render genre %>
           <p>
             <div class="btn btn-outline-dark btn-sm">
-              <%= link_to "Show the #{genre.name} section", genre, :class => "btn" %>
+              <%= link_to "Show the #{genre.name} section ", genre, :class => "btn" %>
               
             </div>
+            <div class="btn btn-outline-danger btn-sm">
+              <%= link_to 'Edit Genre', edit_genre_path(genre), :class => "btn" %>
+              
+            </div>
+            
             <hr class="hr" />
           </p>
         <% end %>
