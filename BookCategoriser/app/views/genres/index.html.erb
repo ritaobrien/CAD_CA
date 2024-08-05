@@ -12,7 +12,7 @@
       GENRES IN CATALOGUE
       <br />
    <br />
-      <%= link_to "Add new genre", new_genre_path, class: "btn btn-dark" %>
+      <%= link_to "Add new genre", new_genre_path, class: "btn btn-outline-dark" %>
       <br />
       <br />
       <hr />
@@ -23,7 +23,7 @@
       
       
   
-      <div id="genres">
+      <div class="genres">
         <% @genres.each do |genre| %>
           <%= render genre %>
           <p class="headingtext">
@@ -35,16 +35,16 @@
               <%= link_to 'Edit Genre', edit_genre_path(genre), :class => "btn" %>
               
             </div>
+            <div class="btn btn-outline-danger btn-sm">
+              
+              <%= button_to "Destroy this genre", genre_path(genre), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-outline-danger btn-sm" %>
+            </div>
+            </div>
             
             <hr class="hr" />
           </p>
         <% end %>
-        <div class="button">
-            <%= button_to "New book", new_genre_path %>
-<a href="#" class="btn btn-secondary">Link</a>
-</div>
-<%= link_to "Add new genre", new_genre_path, :class => "btn" %>
-      </div>
+       
      
     </div>
     <div class="col-lg-3">

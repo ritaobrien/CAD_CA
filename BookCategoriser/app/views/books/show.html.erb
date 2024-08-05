@@ -2,11 +2,11 @@
 <br />
 <h1>Books in the <%= @genre.name %> section SHOW BOOKS</h1>
 <br />
-
+BOOKS SHOW
 
 
 <%= link_to 'Add new book to genre', new_genre_book_path(@genre), class: 'btn btn-dark btn-sm' %>
-<%= link_to 'Back to genres', new_genre_book_path(@genre), class: 'btn btn-dark btn-sm' %>
+<%= link_to 'Back to genres', genres_path, class: 'btn btn-dark btn-sm' %>
 <div id="books">
 <% @genre.books.each do |book| %>
     <hr />

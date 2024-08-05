@@ -52,7 +52,7 @@ class GenresController < ApplicationController
     @genre.destroy!
 
     respond_to do |format|
-      format.html { redirect_to genres_url, notice: "Genre was successfully destroyed." }
+      format.html { redirect_to genres_url, notice: "Genre was successfully deleted." }
       format.json { head :no_content }
     end
   end

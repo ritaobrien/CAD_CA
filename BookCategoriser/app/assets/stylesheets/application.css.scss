@@ -29,8 +29,8 @@
    text-decoration: underline;
    font-weight: bold;
    text-align: center;
-   font-size: 30px;
-   color:#05445e;
+   font-size: 25px;
+   color: #05445e;
 }
  body{
     background-color: #f6f5f0;
@@ -57,6 +57,10 @@
    
  }
 
+ .genres{
+   text-align: center;
+ }
+
  .col{
     border-color: red;
     border-style: dashed;
@@ -69,11 +73,25 @@
     margin: auto; 
  }
 
- hr{
-   
-    border: 1px solid black;
- }
 
+
+
+   hr {
+      padding: 0;
+      border: none;
+      border-top: medium double #05445e;
+      color: #333;
+      text-align: center;
+      }
+      hr:after {
+      
+      display: inline-block;
+      position: relative;
+      top: -0.7em;
+      font-size: 1.5em;
+      padding: 0 0.25em;
+      background: white;
+      }
  .btn-outline-dark{
     border: 1px solid #317a8b;
     color:#05445e;
