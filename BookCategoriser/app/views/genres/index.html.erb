@@ -1,22 +1,32 @@
 
-<div class="container">
+<div class="container-fluid">
   <div class="row">
     <div class="col-lg-3">
     </div>
     <div class="col-lg-6">
     <br />
-      <p class="headingtext">BOOK CATEGORISER</p>
-      <br />
+      <p class="headingtext"><%= image_tag 'book_categoriser.png'  %></p>
+   
       <p class="headingtext">
+      <p class="headingtext">
+      GENRES IN CATALOGUE
+      <br />
+   <br />
       <%= link_to "Add new genre", new_genre_path, class: "btn btn-dark" %>
+      <br />
+      <br />
+      <hr />
+      </p>
+      
     </p>
-      <br />
-      <p class="center">Book Genres</p>
-      <br />
+    
+      
+      
+  
       <div id="genres">
         <% @genres.each do |genre| %>
           <%= render genre %>
-          <p>
+          <p class="headingtext">
             <div class="btn btn-outline-dark btn-sm">
               <%= link_to "Show the #{genre.name} section ", genre, :class => "btn" %>
               
