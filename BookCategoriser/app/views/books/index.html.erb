@@ -2,7 +2,11 @@
 
   
 <% @genre.books.each do |book| %>
+    <hr />
     <%= render book %>
+    <%= button_to "Delete this book", genre_book_path(@genre, book), method: :delete %>
+ <%= button_to "Edit this book", genre_book_path(@genre, book), method: :update %>
+    <hr />
 <% end %>
 
        

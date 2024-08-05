@@ -1,10 +1,15 @@
-<p style="color: green"><%= notice %></p>
+
 <div class="container">
   <div class="row">
     <div class="col-lg-3">
     </div>
     <div class="col-lg-6">
+    <br />
       <p class="headingtext">BOOK CATEGORISER</p>
+      <br />
+      <p class="headingtext">
+      <%= link_to "Add new genre", new_genre_path, class: "btn btn-dark" %>
+    </p>
       <br />
       <p class="center">Book Genres</p>
       <br />
@@ -14,14 +19,18 @@
           <p>
             <div class="btn btn-outline-dark btn-sm">
               <%= link_to "Show the #{genre.name} section", genre, :class => "btn" %>
+              
             </div>
             <hr class="hr" />
           </p>
         <% end %>
+        <div class="button">
+            <%= button_to "New book", new_genre_path %>
+<a href="#" class="btn btn-secondary">Link</a>
+</div>
+<%= link_to "Add new genre", new_genre_path, :class => "btn" %>
       </div>
-      <div class="btn btn-dark btn-sm">
-        <%= link_to "Add new genre", new_genre_path, :class => "btn" %>
-      </div>
+     
     </div>
     <div class="col-lg-3">
     </div>

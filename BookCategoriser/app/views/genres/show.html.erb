@@ -1,29 +1,32 @@
-<p id="notice"><%= notice %></p>
-<p>
-<strong>Name:</strong>
-<%= @genre.name %>
-</p>
-<p>
-<strong>Description:</strong>
-<%= @genre.description %>
-</p>
-<p>
-<strong>Location:</strong>
-<%= @genre.location %>
 
-</p>
+
 
 <!-- Display the books of a genre -->
-<h2>Books in <%= @genre.name %>SHOW GENRE</h2>
-<% @genre.books.each do |book| %>
-<p>
-<p>book details:</p>
-<%= book.title %>
+<h2><%= @genre.name %> Section...SHOW GENRE</h2>
+<%= link_to 'Edit genre', edit_genre_path(@genre) %>
+<hr />
+<hr />
+<p><strong>Books in <%= @genre.name %></strong></p>
 
-</p>
-<% end %>
-<%= link_to 'Edit genre', edit_genre_path(@genre) %> |
+
+
+
+
+<div id="books">
+  <% if @genre.books.any? %>
+    <% @genre.books.each do |book| %>
+      <div class="book">
+        <h3><%= book.title %></h3>
+        <p>Author: <%= book.author %></p>
+        <p>Synopsis: <%= book.synopsis %></p>
+        
+        <%= button_to "Delete this book", genre_book_path(@genre, book), method: :delete, data: { confirm: "Are you sure?" } %>
+      </div>
+    <% end %>
+  <% else %>
+    <p>No books available in this genre.</p>
+  <% end %>
+</div>
+<br />
+<%= link_to 'Add new book to genre', new_genre_book_path(@genre), class: 'btn btn-dark btn-sm' %>
 <%= link_to 'Back to genres', genres_path %> |
-<%= link_to 'Show books', genre_books_path(@genre) %>
-
-

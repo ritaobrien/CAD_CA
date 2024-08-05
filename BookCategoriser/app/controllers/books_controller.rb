@@ -28,20 +28,34 @@ class BooksController < ApplicationController
   end
   
   # POST /genres/1/books
-  def create
-  @genre = Genre.find(params[:genre_id])
+  #def create
+ # @genre = Genre.find(params[:genre_id])
   # For URL like /genres/1/books
   # Populate an book associate with genre 1 with form data
   # genre will be associated with the book
   # @book = @genre.books.build(params.require(:book).permit!)
-  @book = @genre.books.build(params.require(:book).permit(:details))
-  if @book.save
+  #@book = @genre.books.build(params.require(:book).permit(:details))
+ # if @book.save
   # Save the book successfully
-  redirect_to genre_book_url(@genre, @book)
+ # redirect_to genre_book_url(@genre, @book)
+  #else
+  #render :action => "new"
+ # end
+ # end
+
+ def create
+  @genre = Genre.find(params[:genre_id])
+  # Build a new book associated with the genre
+  @book = @genre.books.build(params.require(:book).permit!)
+  
+  if @book.save
+    # Save the book successfully and redirect
+    redirect_to genre_book_path(@genre, @book), notice: 'Book was successfully created.'
   else
-  render :action => "new"
+    # Render the new template with errors
+    render :new
   end
-  end
+end
   
   # GET /genres/1/books/2/edit
   def edit
