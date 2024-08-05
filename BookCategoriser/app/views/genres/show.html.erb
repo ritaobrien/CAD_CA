@@ -1,8 +1,11 @@
-
-
-
-<!-- Display the books of a genre -->
-<h2><%= @genre.name %> Section...SHOW GENRE</h2>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-3">
+    </div>
+    <div class="col-lg-6">   
+    <!-- Display the books of a genre -->
+<br />
+    <p class="headingtext"><%= @genre.name %> Section</p>
 <%= link_to 'Edit genre', edit_genre_path(@genre) %>
 <hr />
 <hr />
@@ -29,4 +32,14 @@
 </div>
 <br />
 <%= link_to 'Add new book to genre', new_genre_book_path(@genre), class: 'btn btn-dark btn-sm' %> |
-<%= link_to 'Back to genre', genres_path, class: 'btn btn-dark btn-sm' %> 
+<%= link_to 'Back to Genre Catalogue', genres_path, class: 'btn btn-dark btn-sm' %> 
+    
+    
+    </div>
+    <div class="col-lg-3">
+    </div>
+  </div>
+</div>
+
+
+
