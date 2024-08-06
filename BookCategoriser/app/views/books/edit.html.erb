@@ -1,7 +1,4 @@
-<h1>Editing book</h1>
-<%= render 'form' %>
-<%= link_to 'Show', genre_book_path(@genre, @book) %> |
-<%= link_to 'Back', genre_books_path(@genre) %>
+
 
 <div class="container-fluid">
   <div class="row">
@@ -9,12 +6,16 @@
     </div>
     <div class="col-lg-6 centredisplay">   
     <br />
-    <p class="headingtext">Edit book in the <%= @genre.name %> section</p>
+    <p>BOOK EDIT VIEW</p>
+    <p class="headingtext"><%= @genre.name %> SECTION</P>
+    <p class="subheading">Edit book "<%= @book.title %>"</p>
+
     <br />
         <%= render "form", book: @book %>
         <p id="notice"><%= notice %></p>
-         <%= link_to "Back to genres", genre_books_path %>
-    </div>
+        <%= link_to "BACK TO #{@genre.name} SECTION", genre_book_path(@genre, @book), class: 'btn btn-outline-dark btn-sm' %>
+
+         </div>
     <div class="col-lg-3">
     </div>
   </div>

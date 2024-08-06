@@ -4,11 +4,12 @@
     </div>
     <div class="col-lg-6"> 
       <br />  
-      <p class="headingtext">Edit Genre</p>
+      <p class="headingtext">Edit <%= @genre.name %></p>
+    
       <div class="centredisplay">
         <%= render "form", genre: @genre %>
         <br />
-        <%= link_to "SHOW #{genre.name}", @genre, class: "btn btn-outline-dark"%> |
+        <%= link_to "SHOW GENRE ", @genre, class: "btn btn-outline-dark"%> |
         <%= link_to "Back to genres", genres_path, class: "btn btn-outline-dark" %>
       </div>    
     <div>

@@ -1,3 +1,5 @@
+
+
 <div class="container-fluid">
   <div class="row">
     <div class="col-lg-3">
@@ -6,10 +8,11 @@
     <!-- Display the books of a genre -->
 <br />
     <p class="headingtext"><%= @genre.name %> Section</p>
-<%= link_to 'Edit genre', edit_genre_path(@genre), class: 'btn btn-dark btn-sm' %>
+<div class="centredisplay"><%= link_to 'EDIT GENRE', edit_genre_path(@genre), class: 'btn btn-outline-dark btn-sm' %>
+<%= button_to "DELETE GENRE", @genre, method: :delete, class: 'btn btn-outline-danger btn-sm' %></div>
 <hr />
-<hr />
-<p><strong>Books in <%= @genre.name %></strong></p>
+
+<p class="headingtext">Books in <%= @genre.name %>GENRESHOW</p>
 
 
 
@@ -23,16 +26,19 @@
         <p>Author: <%= book.author %></p>
         <p>Synopsis: <%= book.synopsis %></p>
         
-        <%= button_to "Delete this book", genre_book_path(@genre, book), method: :delete, data: { confirm: "Are you sure?" } %>
-      </div>
+        <%= link_to "DELETE THIS BOOK", genre_book_path(@genre, book), method: :delete, class: 'btn btn-outline-danger btn-sm' %>
+      <hr />
+        </div>
     <% end %>
   <% else %>
     <p>No books available in this genre.</p>
   <% end %>
 </div>
 <br />
-<%= link_to 'Add new book to genre', new_genre_book_path(@genre), class: 'btn btn-dark btn-sm' %> |
-<%= link_to 'Back to Genre Catalogue', genres_path, class: 'btn btn-dark btn-sm' %> 
+
+
+<%= link_to 'ADD NEW BOOK TO GENRE', new_genre_book_path(@genre), class: 'btn btn-outline-dark btn-sm' %> |
+<%= link_to 'BACK TO FULL CATALOGUE', genres_path, class: 'btn btn-outline-dark btn-sm' %> 
     
     
     </div>

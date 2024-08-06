@@ -17,6 +17,7 @@ class GenresController < ApplicationController
 
   # GET /genres/1/edit
   def edit
+    
   end
 
   # POST /genres or /genres.json
@@ -49,14 +50,23 @@ class GenresController < ApplicationController
 
   # DELETE /genres/1 or /genres/1.json
   def destroy
-    @genre.destroy!
+    @genre = Genre.find(params[:id])
+    @genre.destroy
+    redirect_to genres_path
+  end
+
+  def destroy
+    @genre.destroy
 
     respond_to do |format|
-      format.html { redirect_to genres_url, notice: "Genre was successfully deleted." }
+      format.html { redirect_to genres_url, notice: "Genre was successfully destroyed." }
       format.json { head :no_content }
     end
   end
 
+   def index
+    @genres = Genre.includes(:books).all
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_genre
