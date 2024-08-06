@@ -18,7 +18,7 @@
         <%= render book %>
         <%= link_to "EDIT BOOK", edit_genre_book_path(@genre, book), class: 'btn btn-outline-dark btn-sm' %>
         | 
-        
+        <p>Test</p>
         <%= link_to "DELETE BOOK", genre_book_path(@genre, @book), method: :delete, class: 'btn btn-outline-danger btn-sm'  %>
         <hr />
         <%= link_to 'Delete', genre, method: :delete, data: { confirm: 'Are you sure you want to delete this genre?' }, class: 'btn btn-outline-danger btn-sm' %>
