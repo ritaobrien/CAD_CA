@@ -2,11 +2,11 @@
   <div class="row">
     <div class="col-lg-3">
     </div>
-    <div class="col-lg-6">   
+    <div class="col-lg-6 centredisplay">   
     <!-- Display the books of a genre -->
 <br />
     <p class="headingtext"><%= @genre.name %> Section</p>
-<%= link_to 'Edit genre', edit_genre_path(@genre) %>
+<%= link_to 'Edit genre', edit_genre_path(@genre), class: 'btn btn-dark btn-sm' %>
 <hr />
 <hr />
 <p><strong>Books in <%= @genre.name %></strong></p>
@@ -15,7 +15,7 @@
 
 
 
-<div id="books">
+<div id="books centredisplay">
   <% if @genre.books.any? %>
     <% @genre.books.each do |book| %>
       <div class="book">

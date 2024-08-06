@@ -1,30 +1,46 @@
-
-<br />
-<h1>Books in the <%= @genre.name %> section SHOW BOOKS</h1>
-<br />
-BOOKS SHOW
-
-
-<%= link_to 'Add new book to genre', new_genre_book_path(@genre), class: 'btn btn-dark btn-sm' %>
-<%= link_to 'Back to genres', genres_path, class: 'btn btn-dark btn-sm' %>
-<div id="books">
-<% @genre.books.each do |book| %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-3">
+    </div>
+    <div class="col-lg-6 centredisplay">   
+    <br />
+    <p class="headingtext">Books in the <%= @genre.name %> section</p>
+    <br />
+    <div id="books">
+    <% @genre.books.each do |book| %>
+        <hr />
+     <%= render book %>
+    
+     <%= link_to 'Edit book', edit_genre_book_path(@genre, @book), class: 'btn btn-dark btn-sm' %> |
+    <%= link_to 'Delete book', edit_genre_book_path(@genre, @book), class: 'btn btn-dark btn-sm' %> |
     <hr />
- <%= render book %>
- <%= button_to "Delete this book", genre_book_path(@genre, book), method: :delete %>
- <br />
- </hr>
+     <br />
+     </hr>
+    
+     <% end %>
+    </div>
+         <%= link_to "Back to Genre Catalogue", genre_books_path, class: 'btn btn-dark btn-sm' %>
+         <%= link_to 'Add new book to genre', new_genre_book_path(@genre), class: 'btn btn-dark btn-sm' %>
+<%= link_to 'Back to genres', genres_path, class: 'btn btn-dark btn-sm' %>
 
- <% end %>
+    </div>
+    <div class="col-lg-3">
+    </div>
+  </div>
 </div>
+
+
+
+
+
+
+
 
 
 
 
 <div>
 
-<%= link_to 'Edit book', edit_genre_book_path(@genre, @book), class: 'btn btn-dark btn-sm' %> |
-<%= link_to 'Delete book', edit_genre_book_path(@genre, @book), class: 'btn btn-dark btn-sm' %> |
 
 
 </div>

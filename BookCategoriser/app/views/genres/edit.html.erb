@@ -1,10 +1,26 @@
-<h1>Editing genre</h1>
-
-<%= render "form", genre: @genre %>
-
-<br>
-
-<div>
-  <%= link_to "Show this genre", @genre %> |
-  <%= link_to "Back to genres", genres_path %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-3">
+    </div>
+    <div class="col-lg-6"> 
+      <br />  
+      <p class="headingtext">Edit Genre</p>
+      <div class="centredisplay">
+        <%= render "form", genre: @genre %>
+        <br />
+        <%= link_to "SHOW #{genre.name}", @genre, class: "btn btn-outline-dark"%> |
+        <%= link_to "Back to genres", genres_path, class: "btn btn-outline-dark" %>
+      </div>    
+    <div>
+    <div class="col-lg-3">
+    </div>
+  </div>
 </div>
+
+
+
+
+
+
+
+

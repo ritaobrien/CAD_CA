@@ -25,6 +25,10 @@
    color:#317a8b;
 }
 
+.nav-item{
+   font-size: 25px;
+   text-decoration: underline;
+}
 .col-lg-8{
    align-items: center;
 }
@@ -64,6 +68,17 @@
    text-align: center;
  }
 
+ .f.label{
+   border-radius:20px;
+ }
+
+ .centredisplay{
+   text-align: center;
+ }
+
+ .redbtn:hover{
+   background-color: red;
+ }
  .col{
     border-color: red;
     border-style: dashed;
@@ -76,8 +91,28 @@
     margin: auto; 
  }
 
+ .custom-text-field {
+   width: 300px;
+   height: 40px;
+   border: 1px solid #ccc;
+   padding: 10px;
+   border-radius: 5px;
+ }
 
-
+ .custom-submit-button {
+   background-color: #317a8b;
+   color: white;
+   padding: 15px 20px;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   font-size: 16px;
+   transition: background-color 0.3s;
+ }
+ 
+ .custom-submit-button:hover {
+   background-color: #05445e;
+ }
 
    hr {
       padding: 0;
@@ -102,9 +137,11 @@
     
  }
 
+ btn-outline-danger:hover{
+   background-color: red;
+ }
 
-
-.btn:hover{
+.btn-outline-dark:hover{
    background-color:
    #05445e;
    color:#f6f5f0;

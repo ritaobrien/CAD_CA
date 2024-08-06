@@ -1,13 +1,23 @@
 
-
-<h1>Add a new book to the <%= @genre.name %> section- BOOK NEW VIEW</h1>
-
-<%= render "form", booke: @book %>
-<p id="notice"><%= notice %></p>
-<br>
-
-<div>
-  <%= link_to "Back to genres", genre_books_path %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-3">
+    </div>
+    <div class="col-lg-6 centredisplay">   
+    <br />
+    <p class="headingtext">Add a new book to the <%= @genre.name %> section</p>
+    <br />
+        <%= render "form", book: @book %>
+        <p id="notice"><%= notice %></p>
+         <%= link_to "Back to genres", genre_books_path %>
+    </div>
+    <div class="col-lg-3">
+    </div>
+  </div>
 </div>
+
+
+
+
 
 

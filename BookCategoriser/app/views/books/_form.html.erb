@@ -14,19 +14,24 @@
   <p>
   <div class="field">
     <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: "custom-text-field" %>
   </div>
+
+  <br />
 
   <div class="field">
     <%= f.label :author %>
-    <%= f.text_field :author %>
+    <%= f.text_field :author, class: "custom-text-field" %>
   </div>
+
+  <br />
 
   <div class="field">
     <%= f.label :synopsis %>
-    <%= f.text_area :synopsis %>
+    <%= f.text_area :synopsis, class: "custom-text-field" %>
   </div>
 
+  <br />
   <div class="actions">
     <%= f.submit %>
   </div>
