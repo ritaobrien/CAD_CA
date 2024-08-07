@@ -72,3 +72,5 @@ gem 'jquery-rails'
 
 
 
+
+gem "dartsass-rails", "~> 0.5.1"
