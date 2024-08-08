@@ -1,5 +1,5 @@
-
-
+<h1>SHOW GENRE</h1>
+123
 <div class="container-fluid">
   <div class="row">
     <div class="col-lg-3">
@@ -7,12 +7,13 @@
     <div class="col-lg-6 centredisplay">   
     <!-- Display the books of a genre -->
 <br />
-    <p class="headingtext"><%= @genre.name %> Section</p>
-<div class="centredisplay"><%= link_to 'EDIT GENRE', edit_genre_path(@genre), class: 'btn btn-outline-dark btn-sm' %>
-<%= button_to "DELETE GENRE", @genre, method: :delete, class: 'btn btn-outline-danger btn-sm' %></div>
-<hr />
+    <p class="headingtext"><%= @genre.name %></p>
+    <%= link_to 'ADD NEW BOOK TO GENRE', new_genre_book_path(@genre), class: 'btn btn-outline-success btn-sm' %>
+    <%= link_to 'BACK TO FULL CATALOGUE', genres_path, class: 'btn btn-outline-dark btn-sm' %> 
+    <br />    
 
-<p class="headingtext">Books in <%= @genre.name %>GENRESHOW</p>
+<br />
+<p><strong>Books in <%= @genre.name %></strong></p>
 
 
 
@@ -22,24 +23,20 @@
   <% if @genre.books.any? %>
     <% @genre.books.each do |book| %>
       <div class="book">
-        <h3><%= book.title %></h3>
-        <p>Author: <%= book.author %></p>
-        <p>Synopsis: <%= book.synopsis %></p>
+      <hr />  
+      <%= render book%>
         
-        <%= link_to "DELETE THIS BOOK", genre_book_path(@genre, book), method: :delete, class: 'btn btn-outline-danger btn-sm' %>
-      <hr />
+        <%= button_to "DELETE THIS BOOK", genre_book_path(@genre, book), method: :delete, class: 'btn btn-outline-danger btn-sm'  %>
+        <hr />      
         </div>
     <% end %>
   <% else %>
-    <p>No books available in this genre.</p>
+    <p class="noticeok">No books currently in this genre - add one below.</p>
   <% end %>
+
 </div>
 <br />
 
-
-<%= link_to 'ADD NEW BOOK TO GENRE', new_genre_book_path(@genre), class: 'btn btn-outline-dark btn-sm' %> |
-<%= link_to 'BACK TO FULL CATALOGUE', genres_path, class: 'btn btn-outline-dark btn-sm' %> 
-    
     
     </div>
     <div class="col-lg-3">

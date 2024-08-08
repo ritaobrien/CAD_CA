@@ -68,9 +68,3 @@ end
 
 gem 'bootstrap', '~> 5.3', '>= 5.3.3'
 gem 'dartsass-sprockets'
-gem 'jquery-rails'
-
-
-
-
-gem "dartsass-rails", "~> 0.5.1"

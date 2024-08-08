@@ -12,23 +12,32 @@
   <% end %>
   <div class="field">
   <p>
-  <%= f.label :title %><br />
-  <%= f.text_field :title, class: "custom-text-field" %>
-  </p>
-  <p>
-<%= f.label :author %><br />
-  <%= f.text_field :author, class: "custom-text-field" %>
-  </p>
-  <p>
-<%= f.label :synopsis %><br />
-  <%= f.text_field :synopsis, class: "custom-text-field" %>
-  </p>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "custom-text-field" %>
+  </div>
 
+  <br />
+
+  <div class="field">
+    <%= f.label :author %>
+    <%= f.text_field :author, class: "custom-text-field" %>
   </div>
+
+  <br />
+
+  <div class="field">
+    <%= f.label :synopsis %>
+    <%= f.text_area :synopsis, class: "custom-text-field" %>
+  </div>
+
+  <br />
   <div class="actions">
-  <%= f.submit "SAVE BOOK", class: "btn btn-outline-dark btn-sm"%>
-  
+    <%= f.submit "SAVE", class: "btn btn-outline-dark btn-sm" %>
   </div>
+  </p>
+  </div>
+  
   <% end %>
   
   
